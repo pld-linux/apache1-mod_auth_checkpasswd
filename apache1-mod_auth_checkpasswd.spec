@@ -1,19 +1,20 @@
 %define		mod_name	auth_checkpasswd
-%define 	apxs		/usr/sbin/apxs
+%define 	apxs		/usr/sbin/apxs1
 Summary:	This is the CHECKPASSWD authentication module for Apache
 Summary(pl):	To jest modu³ Apache uwierzytelniaj±cy przez CHECKPASSWD
-Name:		apache-mod_%{mod_name}
+Name:		apache1-mod_%{mod_name}
 Version:	1.0
-Release:	4
+Release:	1
 License:	GPL
 Group:		Networking/Daemons
 Source0:	mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	7f699981ada026656affe2e35409bdf2
 Patch0:		%{name}-aplog.patch
 BuildRequires:	%{apxs}
-BuildRequires:	apache(EAPI)-devel
+BuildRequires:	apache1-devel
 Requires(post,preun):	%{apxs}
-Requires:	apache(EAPI)
+Requires:	apache1
+Obsoletes:	apache-mod_%{mod_name} <= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_pkglibdir	%(%{apxs} -q LIBEXECDIR)
@@ -35,9 +36,7 @@ zwyk³y plik /etc/shadow.
 %patch -p1
 
 %build
-%{apxs} \
-	-c mod_%{mod_name}.c \
-	-o mod_%{mod_name}.so
+%{apxs} -c mod_%{mod_name}.c -o mod_%{mod_name}.so
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -50,15 +49,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %{apxs} -e -a -n %{mod_name} %{_pkglibdir}/mod_%{mod_name}.so 1>&2
-if [ -f /var/lock/subsys/httpd ]; then
-	/etc/rc.d/init.d/httpd restart 1>&2
+if [ -f /var/lock/subsys/apache ]; then
+	/etc/rc.d/init.d/apache restart 1>&2
 fi
 
 %preun
 if [ "$1" = "0" ]; then
 	%{apxs} -e -A -n %{mod_name} %{_pkglibdir}/mod_%{mod_name}.so 1>&2
-	if [ -f /var/lock/subsys/httpd ]; then
-		/etc/rc.d/init.d/httpd restart 1>&2
+	if [ -f /var/lock/subsys/apache ]; then
+		/etc/rc.d/init.d/apache restart 1>&2
 	fi
 fi
 
