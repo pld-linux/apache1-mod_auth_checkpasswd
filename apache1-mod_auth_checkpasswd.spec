@@ -1,7 +1,7 @@
 %define		mod_name	auth_checkpasswd
 %define 	apxs		/usr/sbin/apxs
 Summary:	This is the CHECKPASSWD authentication module for Apache
-Summary(pl):	To jest modu³ Apache autentykuj±cy przez CHECKPASSWD
+Summary(pl):	To jest modu³ Apache uwierzytelniaj±cy przez CHECKPASSWD
 Name:		apache-mod_%{mod_name}
 Version:	1.0
 Release:	4
@@ -25,10 +25,10 @@ be setuid, which gives you a possibility to verify passwords using
 regular /etc/shadow.
 
 %description -l pl
-To jest modu³ autentykuj±cy dla Apache który wykorzystuje zewnêtrzn±
-aplikacjê kompatybiln± z "checkpasswd" DJB. Aplikacja mo¿e byæ
-suidowana, co daje mo¿liwo¶æ weryfikowania hase³ wykorzystuj±c zwyk³y
-plik /etc/shadow.
+To jest modu³ uwierzytelniaj±cy dla Apache który wykorzystuje
+zewnêtrzn± aplikacjê kompatybiln± z "checkpasswd" DJB. Aplikacja mo¿e
+byæ suidowana, co daje mo¿liwo¶æ weryfikowania hase³ wykorzystuj±c
+zwyk³y plik /etc/shadow.
 
 %prep
 %setup -q -c -n "mod_%{mod_name}-%{version}"
