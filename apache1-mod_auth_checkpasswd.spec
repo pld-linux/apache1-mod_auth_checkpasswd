@@ -19,7 +19,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is an authentication module for Apache that uses an external
-application compatibile with DJB's "checkpasswd". The application may
+application compatible with DJB's "checkpasswd". The application may
 be setuid, which gives you a possibility to verify passwords using
 regular /etc/shadow.
 
