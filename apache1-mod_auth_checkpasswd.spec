@@ -4,10 +4,11 @@ Summary:	This is the CHECKPASSWD authentication module for Apache
 Summary(pl):	To jest modu³ Apache autentykuj±cy przez CHECKPASSWD
 Name:		apache-mod_%{mod_name}
 Version:	1.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Networking/Daemons
 Source0:	mod_%{mod_name}-%{version}.tar.gz
+Patch0:		%{name}-aplog.patch
 BuildRequires:	%{apxs}
 BuildRequires:	apache(EAPI)-devel
 Prereq:		%{_sbindir}/apxs
@@ -30,6 +31,7 @@ plik /etc/shadow.
 
 %prep
 %setup -q -c -n "mod_%{mod_name}-%{version}"
+%patch -p1
 
 %build
 %{apxs} \
