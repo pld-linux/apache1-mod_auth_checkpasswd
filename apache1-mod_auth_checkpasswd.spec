@@ -4,7 +4,7 @@ Summary:	This is the CHECKPASSWD authentication module for Apache
 Summary(pl):	To jest modu³ Apache autentykuj±cy przez CHECKPASSWD
 Name:		apache-mod_%{mod_name}
 Version:	1.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Daemons
 Group(cs):	Sí»ové/Démoni
