@@ -8,6 +8,7 @@ Release:	4
 License:	GPL
 Group:		Networking/Daemons
 Source0:	mod_%{mod_name}-%{version}.tar.gz
+# Source0-md5:	7f699981ada026656affe2e35409bdf2
 Patch0:		%{name}-aplog.patch
 BuildRequires:	%{apxs}
 BuildRequires:	apache(EAPI)-devel
