@@ -1,0 +1,12 @@
+diff -Nur mod_auth_checkpasswd-1.0.orig/mod_auth_checkpasswd.c mod_auth_checkpasswd-1.0/mod_auth_checkpasswd.c
+--- mod_auth_checkpasswd-1.0.orig/mod_auth_checkpasswd.c	Fri Nov 23 21:23:43 2001
++++ mod_auth_checkpasswd-1.0/mod_auth_checkpasswd.c	Mon Mar 11 13:06:46 2002
+@@ -136,7 +136,7 @@
+     const char *group_name, *ll, *w;
+ 
+     if (!(f = ap_pcfg_openfile(p, grpfile))) {
+-	aplog_error(APLOG_MARK, APLOG_ERR, NULL,
++	ap_log_error(APLOG_MARK, APLOG_ERR, NULL,
+ 		    "Could not open group file: %s", grpfile);
+ 	return NULL;
+     }
