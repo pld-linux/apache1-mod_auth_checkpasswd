@@ -28,7 +28,7 @@ aplikacjê kompatybiln± z "checkpasswd" DJB. Aplikacja mo¿e byæ
 suidowana, co daje mo¿liwo¶æ weryfikowania hase³ wykorzystuj±c zwyk³y
 plik /etc/shadow.
 
-%prep 
+%prep
 %setup -q -c -n "mod_%{mod_name}-%{version}"
 
 %build
