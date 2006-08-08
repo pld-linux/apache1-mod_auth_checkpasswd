@@ -35,7 +35,7 @@ zwyk³y plik /etc/shadow.
 
 %prep
 %setup -q -c -n "mod_%{mod_name}-%{version}"
-%patch -p1
+%patch0 -p1
 
 %build
 %{apxs} -c mod_%{mod_name}.c -o mod_%{mod_name}.so
