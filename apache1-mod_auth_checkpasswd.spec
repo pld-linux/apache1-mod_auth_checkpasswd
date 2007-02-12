@@ -1,7 +1,7 @@
 %define		mod_name	auth_checkpasswd
 %define 	apxs		/usr/sbin/apxs1
 Summary:	This is the CHECKPASSWD authentication module for Apache
-Summary(pl.UTF-8):   To jest moduł Apache uwierzytelniający przez CHECKPASSWD
+Summary(pl.UTF-8):	To jest moduł Apache uwierzytelniający przez CHECKPASSWD
 Name:		apache1-mod_%{mod_name}
 Version:	1.0
 Release:	3
